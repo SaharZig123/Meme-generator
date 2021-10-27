@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meme Gen</title>
-    <link rel="stylesheet" href="/style/style.css">
+    <link rel="stylesheet" href="./style/style.css">
 </head>
 
 <body>
@@ -48,15 +48,15 @@
             <div class="tools">
                 <div class="text-tools">
                     <input type="text" name="text-line" onkeyup="onAddText(this.value)" placeholder="Here is your text" >
-                    <button class="text-up" onclick="onIncreaseTextSize()">text-up</button>
-                    <button class="text-down" onclick="onDecreaseTextSize()">text-down</button>
+                    <button class="text-up" onclick="onTextUp()" >text-up</button>
+                    <button class="text-down" onclick="onTextDown()">text-down</button>
                     <button class="switch-line">switch-line</button>
                     <button class="add-text-line">add-text-line</button>
                     <button class="delete">delete</button>
                 </div>
                 <div class="text-decorations">
-                    <button class="A+">A+</button>
-                    <button class="A-">A-</button>
+                    <button class="A+" onclick="onIncreaseTextSize()">A+</button>
+                    <button class="A-" onclick="onDecreaseTextSize()">A-</button>
                     <button class="right">right</button>
                     <button class="center">center</button>
                     <button class="left">left</button>
@@ -68,7 +68,7 @@
     </main>
 
 
-<script src="/js/service.js"></script>
-<script src="/js/controller.js"></script>
+<script src="./js/service.js"></script>
+<script src="./js/controller.js"></script>
 </body>
 </html>

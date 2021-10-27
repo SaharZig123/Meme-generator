@@ -15,6 +15,7 @@ var gMeme = {
       size: 40,
       align: 'left',
       color: 'red',
+      hight:0
     },
   ],
 }
@@ -30,7 +31,7 @@ function addText(text) {
   console.log(gMeme)
 }
 
-function getCurrMeme() {
+function getMemeObject() {
   return gMeme
 }
 
