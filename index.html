@@ -47,11 +47,14 @@
             <canvas id="my-canvas" height="500" width="500"></canvas>
             <div class="tools">
                 <div class="text-tools">
-                    <input type="text" name="text-line" onkeyup="onAddText(this.value)" placeholder="Here is your text" >
-                    <button class="text-up" onclick="onTextUp()" >text-up</button>
+                    <input type="text" id="0" name="text-line" onkeyup="onAddText(this.value) "
+                        onclick="onClickInput(this.id)" placeholder="Here is your text">
+                    <input type="text" id="1" name="text-line2" onkeyup="onAddText(this.value)"
+                        onclick="onClickInput(this.id)" placeholder="Here is your second text" hidden>
+                    <button class="text-up" onclick="onTextUp()">text-up</button>
                     <button class="text-down" onclick="onTextDown()">text-down</button>
-                    <button class="switch-line">switch-line</button>
-                    <button class="add-text-line">add-text-line</button>
+                    <button class="switch-line" onclick="onSwitchLines()">switch-line</button>
+                    <button class="add-text-line" onclick="onAddLine()">add-text-line</button>
                     <button class="delete">delete</button>
                 </div>
                 <div class="text-decorations">
@@ -64,11 +67,12 @@
                     <button class="font-color">font-color</button>
                 </div>
             </div>
-        </section>    
+        </section>
     </main>
 
 
-<script src="./js/service.js"></script>
-<script src="./js/controller.js"></script>
+    <script src="./js/service.js"></script>
+    <script src="./js/controller.js"></script>
 </body>
+
 </html>
