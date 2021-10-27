@@ -20,6 +20,8 @@ function getSelectedImg() {
   return gImgs[0]
 }
 
-function getText() {
-  return gMeme.lines[0].txt
+
+function addText(text){
+    gMeme.lines[0].txt=text
+    console.log(gMeme)
 }

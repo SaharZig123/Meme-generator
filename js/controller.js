@@ -6,29 +6,30 @@ function onSelectImg(imgId){
     getSelectedImg()
 }
 
-drawImg2()
+drawImg()
 
 
-function drawImg2() {
+function drawImg(text) {
     var selectedImg=getSelectedImg()
-    console.log(selectedImg)
     var img = new Image();
     img.src=selectedImg.url
-    console.log(img.src)
     img.onload = () => {
       gCtx.drawImage(img, 0, 0, gElCanvas.width, gElCanvas.height);
-      drawText()
+      drawText(text)
     };
   }
 
 
-  function drawText() {
-  let memeText=getText()
-  console.log(memeText)
+  function drawText(text) {
     gCtx.lineWidth = 2;
     gCtx.strokeStyle = 'black';
     gCtx.fillStyle = 'white';
     gCtx.font = '40px Impact';
-    gCtx.fillText(memeText, 50, 50);
-    gCtx.strokeText(memeText, 50, 50);
+    gCtx.fillText(text, 50, 50);
+    gCtx.strokeText(text, 50, 50);
+  }
+
+  function onAddText(textInput){
+      addText(textInput)
+      drawImg(textInput)
   }
