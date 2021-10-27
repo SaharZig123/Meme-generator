@@ -8,74 +8,61 @@ const meme = getMemeObject()
 var gCurrImg
 
 function onSelectImg(imgId) {
-  let elPlaceHolder = document.querySelector('[name=text-line]').placeholder
   gCurrImg = getSelectedImg(imgId)
-  drawImg(elPlaceHolder)
+  drawImg()
   elMain.hidden = true
   elEditor.hidden = false
 }
 
-function drawImg(text) {
+function drawImg() {
   let selectedImg = gCurrImg
   let img = new Image()
   img.src = selectedImg.url
   img.onload = () => {
     gCtx.drawImage(img, 0, 0, gElCanvas.width, gElCanvas.height)
-    drawText(text)
+    drawText()
   }
 }
 
-function drawText(text) {
+function drawText() {
   let x = gElCanvas.width / 2
-  let fontSizes = getFontSizes()
-  console.log(fontSizes)
   gCtx.lineWidth = 2
   gCtx.strokeStyle = 'black'
   gCtx.fillStyle = 'white'
-
   gCtx.textAlign = 'center'
-  if (meme.selectedLineIdx === 0) {
-    gCtx.font = `${fontSizes[0]}px Impact`
-    gCtx.fillText(text, x, 50 + meme.lines[0].hight)
-    gCtx.strokeText(text, x, 50 + meme.lines[0].hight)
-    if (meme.lines[1]) {
-      gCtx.font = `${fontSizes[1]}px Impact`
-      gCtx.fillText(meme.lines[1].txt, x, 400 + meme.lines[1].hight)
-      gCtx.strokeText(meme.lines[1].txt, x, 400 + meme.lines[1].hight)
-    }
-  } else if (meme.selectedLineIdx === 1) {
-    gCtx.font = `${fontSizes[0]}px Impact`
-    gCtx.fillText(meme.lines[0].txt, x, 50 + meme.lines[0].hight)
-    gCtx.strokeText(meme.lines[0].txt, x, 50 + meme.lines[0].hight)
-    gCtx.font = `${fontSizes[1]}px Impact`
-    gCtx.fillText(text, x, 400 + meme.lines[1].hight)
-    gCtx.strokeText(text, x, 400 + meme.lines[1].hight)
+  gCtx.font = `${meme.lines[0].size}px Impact`
+  gCtx.fillText(meme.lines[0].txt, x, 50 + meme.lines[0].hight)
+  gCtx.strokeText(meme.lines[0].txt, x, 50 + meme.lines[0].hight)
+  if (meme.lines[1]) {
+    gCtx.font = `${meme.lines[1].size}px Impact`
+    gCtx.fillText(meme.lines[1].txt, x, 400 + meme.lines[1].hight)
+    gCtx.strokeText(meme.lines[1].txt, x, 400 + meme.lines[1].hight)
   }
 }
 
 function onAddText(textInput) {
   addText(textInput)
-  drawImg(textInput)
+  drawImg()
 }
 
 function onIncreaseTextSize() {
   increaseTextSize()
-  drawImg(meme.lines[meme.selectedLineIdx].txt)
+  drawImg()
 }
 
 function onDecreaseTextSize() {
   decreaseTextSize()
-  drawImg(meme.lines[meme.selectedLineIdx].txt)
+  drawImg()
 }
 
 function onTextUp() {
   meme.lines[meme.selectedLineIdx].hight -= 2
-  drawImg(meme.lines[meme.selectedLineIdx].txt)
+  drawImg()
 }
 
 function onTextDown() {
   meme.lines[meme.selectedLineIdx].hight += 2
-  drawImg(meme.lines[meme.selectedLineIdx].txt)
+  drawImg()
 }
 
 function onAddLine() {
@@ -84,7 +71,7 @@ function onAddLine() {
   let elSecondInput = document.querySelector('[name=text-line2]')
   elSecondInput.hidden = false
   meme.selectedLineIdx = 1
-  drawImg(elSecondInput.placeholder)
+  drawImg()
 }
 
 function onSwitchLines() {

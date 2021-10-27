@@ -11,7 +11,7 @@ var gMeme = {
   selectedLineIdx: 0,
   lines: [
     {
-      txt: '',
+      txt: 'Here is your text',
       size: 40,
       align: 'left',
       color: 'red',
@@ -35,12 +35,6 @@ function getMemeObject() {
   return gMeme
 }
 
-function getFontSizes() {
-  let fontSizes = [gMeme.lines[0].size]
-  if (gMeme.lines[1]) fontSizes = [gMeme.lines[0].size, gMeme.lines[1].size]
-  return fontSizes
-}
-
 function increaseTextSize() {
   gMeme.lines[gMeme.selectedLineIdx].size += 3
 }
@@ -51,7 +45,7 @@ function decreaseTextSize() {
 
 function addNewLine() {
   let newLine = {
-    txt: '',
+    txt: 'Here is your second text',
     size: 40,
     align: 'left',
     color: 'red',
