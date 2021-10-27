@@ -1,0 +1,58 @@
+/* INDEX */
+/* HEADER */
+
+header{
+    height: 20vh;
+    background-color: rgb(226, 112, 112);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header nav{
+    width: 30%;
+}
+
+header ul{
+    display: flex;
+    text-decoration: none;
+    justify-content: space-around;
+}
+
+/* SEARCH BAR */
+
+.search-bar{
+    height: 10vh;
+    background-color: rgb(186, 224, 143);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* MAIN CONTENT */
+
+.meme-imgs{
+    display: grid;
+}
+
+
+/* MEME_EDITOR_PAGE */
+
+.meme-editor{
+    display: flex;
+    background-color: violet;
+}
+
+canvas{
+    display: block;
+    margin: 0 auto;
+    outline: 1px solid black;
+    background-color: white;
+}
+
+.tools{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
