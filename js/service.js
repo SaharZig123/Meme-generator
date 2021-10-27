@@ -1,5 +1,5 @@
 var gKeywords = { happy: 12, 'funny puk': 1 }
-
+var gCurrIdxImg
 var gImgs = [
   { id: 1, url: '/meme-imgs/1.jpg', keywords: ['trump', 'angry', 'fake news'] },
   { id: 2, url: '/meme-imgs/2.jpg', keywords: ['trump', 'angry', 'fake news'] },
@@ -7,12 +7,12 @@ var gImgs = [
 ]
 
 var gMeme = {
-  selectedImgId: 1,
+  selectedImgId: gCurrIdxImg,
   selectedLineIdx: 0,
   lines: [
     {
       txt: '',
-      size: 20,
+      size: 40,
       align: 'left',
       color: 'red',
     },
@@ -21,7 +21,7 @@ var gMeme = {
 
 function getSelectedImg(imgId) {
   let imgIdx = gImgs.findIndex((img) => +imgId === img.id)
-  console.log(imgIdx)
+  gCurrIdxImg = imgIdx
   return gImgs[imgIdx]
 }
 
@@ -29,3 +29,21 @@ function addText(text) {
   gMeme.lines[0].txt = text
   console.log(gMeme)
 }
+
+function getCurrMeme() {
+  return gMeme
+}
+
+function getFontSize() {
+  return gMeme.lines[0].size
+}
+
+function increaseTextSize() {
+  gMeme.lines[0].size += 3
+}
+
+function decreaseTextSize() {
+  gMeme.lines[0].size -= 3
+}
+
+

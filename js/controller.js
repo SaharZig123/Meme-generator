@@ -4,18 +4,18 @@ var gCtx = gElCanvas.getContext('2d')
 var elMain = document.querySelector('.main-content')
 var elEditor = document.querySelector('.meme-editor')
 
-var currImg
+var gCurrImg
 
 function onSelectImg(imgId) {
   let elPlaceHolder = document.querySelector('[name=text-line]').placeholder
-  currImg = getSelectedImg(imgId)
+  gCurrImg = getSelectedImg(imgId)
   drawImg(elPlaceHolder)
   elMain.hidden = true
   elEditor.hidden = false
 }
 
 function drawImg(text) {
-  let selectedImg = currImg
+  let selectedImg = gCurrImg
   let img = new Image()
   img.src = selectedImg.url
   img.onload = () => {
@@ -28,7 +28,7 @@ function drawText(text) {
   gCtx.lineWidth = 2
   gCtx.strokeStyle = 'black'
   gCtx.fillStyle = 'white'
-  gCtx.font = '40px Impact'
+  gCtx.font = `${getFontSize()}px Impact`
   gCtx.fillText(text, 50, 50)
   gCtx.strokeText(text, 50, 50)
 }
@@ -36,4 +36,17 @@ function drawText(text) {
 function onAddText(textInput) {
   addText(textInput)
   drawImg(textInput)
+}
+
+
+function onIncreaseTextSize(){
+let currMeme=getCurrMeme()
+increaseTextSize()
+drawImg(currMeme.lines[0].txt)
+}
+
+function onDecreaseTextSize(){
+let currMeme=getCurrMeme()
+decreaseTextSize()
+drawImg(currMeme.lines[0].txt)
 }
