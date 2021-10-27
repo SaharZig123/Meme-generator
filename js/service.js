@@ -1,9 +1,9 @@
 var gKeywords = { happy: 12, 'funny puk': 1 }
 var gCurrIdxImg
 var gImgs = [
-  { id: 1, url: '/meme-imgs/1.jpg', keywords: ['trump', 'angry', 'fake news'] },
-  { id: 2, url: '/meme-imgs/2.jpg', keywords: ['trump', 'angry', 'fake news'] },
-  { id: 3, url: '/meme-imgs/3.jpg', keywords: ['trump', 'angry', 'fake news'] },
+  { id: 1, url: './meme-imgs/1.jpg', keywords: ['trump', 'angry', 'fake news'] },
+  { id: 2, url: './meme-imgs/2.jpg', keywords: ['trump', 'angry', 'fake news'] },
+  { id: 3, url: './meme-imgs/3.jpg', keywords: ['trump', 'angry', 'fake news'] },
 ]
 
 var gMeme = {
