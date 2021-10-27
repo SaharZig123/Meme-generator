@@ -39,8 +39,11 @@ header ul{
 /* MEME_EDITOR_PAGE */
 
 .meme-editor{
-    display: flex;
     background-color: violet;
+}
+
+.main-container{
+    display: flex;
 }
 
 canvas{

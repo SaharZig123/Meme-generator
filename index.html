@@ -10,7 +10,10 @@
 </head>
 
 <body>
-    <!-- <header>
+
+    <!-- MAIN_PAGE -->
+
+    <header>
         <div class="logo">Meme Generator</div>
         <nav>
             <ul>
@@ -21,41 +24,47 @@
         </nav>
     </header>
 
-    <section class="search-bar">
-        <input type="text" class="search">
-        <div class="filter-img">
-            <div class="more">..more</div>
-        </div>
-    </section>
+
 
     <main class="main-content">
-        <section class="meme-imgs"> </section>
-    </main> -->
+        <section class="search-bar">
+            <input type="text" class="search">
+            <div class="filter-img">
+                <div class="more">..more</div>
+            </div>
+        </section>
+        <section class="meme-imgs">
+            <img src="/meme-imgs/1.jpg" alt="" id="1" onclick="onSelectImg(this.id)">
+            <img src="/meme-imgs/2.jpg" alt="" id="2" onclick="onSelectImg(this.id)">
+            <img src="/meme-imgs/3.jpg" alt="" id="3" onclick="onSelectImg(this.id)">
+        </section>
+    </main>
 
     <!-- MEME_EDITOR_PAGE -->
 
-    <main class="meme-editor" >
-        <canvas id="my-canvas" height="500" width="500"></canvas>
-        <div class="tools">
-            <div class="text-tools">
-                <input type="text" name="text-line" onkeyup="onAddText(this.value)" placeholder="Here is your text" >
-                <button class="text-up">text-up</button>
-                <button class="text-down">text-down</button>
-                <button class="switch-line">switch-line</button>
-                <button class="add-text-line">add-text-line</button>
-                <button class="delete">delete</button>
+    <main class="meme-editor" hidden>
+        <section class="main-container">
+            <canvas id="my-canvas" height="500" width="500"></canvas>
+            <div class="tools">
+                <div class="text-tools">
+                    <input type="text" name="text-line" onkeyup="onAddText(this.value)" placeholder="Here is your text" >
+                    <button class="text-up">text-up</button>
+                    <button class="text-down">text-down</button>
+                    <button class="switch-line">switch-line</button>
+                    <button class="add-text-line">add-text-line</button>
+                    <button class="delete">delete</button>
+                </div>
+                <div class="text-decorations">
+                    <button class="A+">A+</button>
+                    <button class="A-">A-</button>
+                    <button class="right">right</button>
+                    <button class="center">center</button>
+                    <button class="left">left</button>
+                    <button class="stroke-color">stroke-color</button>
+                    <button class="font-color">font-color</button>
+                </div>
             </div>
-            <div class="text-decorations">
-                <button class="A+">A+</button>
-                <button class="A-">A-</button>
-                <button class="right">right</button>
-                <button class="center">center</button>
-                <button class="left">left</button>
-                <button class="stroke-color">stroke-color</button>
-                <button class="font-color">font-color</button>
-            </div>
-        </div>
-
+        </section>    
     </main>
 
 
