@@ -7,6 +7,19 @@ const elEditor = document.querySelector('.meme-editor')
 const meme = getMemeObject()
 var gCurrImg
 
+function onInIt(){
+  renderImgs()
+}
+
+function renderImgs(){
+  let elMemeImgs=document.querySelector('.meme-imgs')
+  let strHTMLS=''
+  for(let i=1;i<gImgs.length+1;i++){
+    strHTMLS+=`<img src="/meme-imgs/${i}.jpg" alt="" id="${i}" onclick="onSelectImg(this.id)">`
+  }
+  elMemeImgs.innerHTML=strHTMLS
+}
+
 function onSelectImg(imgId) {
   gCurrImg = getSelectedImg(imgId)
   drawImg()

@@ -9,34 +9,32 @@
     <link rel="stylesheet" href="./style/style.css">
 </head>
 
-<body>
+<body onload="onInIt()">
 
     <!-- MAIN_PAGE -->
 
     <header>
-        <div class="logo">Meme Generator</div>
-        <nav>
+        <section class="header-content">
+            <div class="logo">Meme Generator</div>
             <ul>
                 <li>Gallery</li>
                 <li>My Memes</li>
                 <li>About</li>
             </ul>
-        </nav>
+        </section>
     </header>
 
-
-
-    <main class="main-content">
-        <section class="search-bar">
+    <section class="search-bar">
+        <section class="search-bar-content">
             <input type="text" class="search">
             <div class="filter-img">
                 <div class="more">..more</div>
             </div>
         </section>
+    </section>
+
+    <main class="main-content">
         <section class="meme-imgs">
-            <img src="/meme-imgs/1.jpg" alt="" id="1" onclick="onSelectImg(this.id)">
-            <img src="/meme-imgs/2.jpg" alt="" id="2" onclick="onSelectImg(this.id)">
-            <img src="/meme-imgs/3.jpg" alt="" id="3" onclick="onSelectImg(this.id)">
         </section>
     </main>
 

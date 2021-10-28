@@ -1,62 +1,99 @@
+html {
+  font-family: IndieFlower;
+}
+
+body {
+  margin: 0;
+  background-color: #ffd3b4;
+}
+
+/* TYPOGRAPHY */
+
+@font-face {
+  font-family: IndieFlower;
+  src: url(/fonts/IndieFlower/IndieFlower-Regular.ttf);
+}
+
 /* INDEX */
 /* HEADER */
 
-header{
-    height: 20vh;
-    background-color: rgb(226, 112, 112);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+header {
+  height: 15vh;
+  background-color: #98ddca;
 }
 
-header nav{
-    width: 30%;
+.header-content {
+  width: 80vw;
+  height: 100%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.875rem;
 }
 
-header ul{
-    display: flex;
-    text-decoration: none;
-    justify-content: space-around;
+
+.header-content ul {
+  width: 40%;
+  list-style-type: none;
+  display: flex;
+  text-decoration: none;
+  justify-content: space-between;
 }
 
 /* SEARCH BAR */
 
-.search-bar{
-    height: 10vh;
-    background-color: rgb(186, 224, 143);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.search-bar {
+  height: 5vh;
+  background-color: #d5ecc2;
+  margin-bottom: 15px;
+}
+
+.search-bar-content {
+  width: 80vw;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 /* MAIN CONTENT */
 
-.meme-imgs{
-    display: grid;
+.meme-imgs {
+  width: 80vw;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-gap: 20px;
+  justify-items: stretch;
+}
+
+.meme-imgs img {
+  border: 2px solid black;
 }
 
 /*--------------------------------------------- */
 
 /* MEME_EDITOR_PAGE */
 
-.meme-editor{
-    background-color: violet;
+.meme-editor {
+  background-color: violet;
 }
 
-.main-container{
-    display: flex;
+.main-container {
+  display: flex;
 }
 
-canvas{
-    display: block;
-    margin: 0 auto;
-    outline: 1px solid black;
-    background-color: white;
+canvas {
+  display: block;
+  margin: 0 auto;
+  outline: 1px solid black;
+  background-color: white;
 }
 
-.tools{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
+.tools {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
 }
